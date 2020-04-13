@@ -40,9 +40,11 @@ class Kernel
     public function handle(Request $request): Response
     {
         $this->registerConfigs();
-        $this->registerRoutes();
-
+        //$this->registerRoutes();
+        (new RegisterRoutesCommand($this))->excute();
         return $this->process($request);
+
+
     }
 
     /**
@@ -62,11 +64,11 @@ class Kernel
     /**
      * @return void
      */
-    protected function registerRoutes(): void
-    {
-        $this->routeCollection = require __DIR__ . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'routing.php';
-        $this->containerBuilder->set('route_collection', $this->routeCollection);
-    }
+    //protected function registerRoutes(): void
+    //{
+    //    $this->routeCollection = require __DIR__ . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'routing.php';
+    //    $this->containerBuilder->set('route_collection', $this->routeCollection);
+    //}
 
     /**
      * @param Request $request
