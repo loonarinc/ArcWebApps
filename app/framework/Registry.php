@@ -11,6 +11,10 @@ use Symfony\Component\Routing\Generator\UrlGenerator;
 use Symfony\Component\Routing\RequestContext;
 use Symfony\Component\Routing\RouteCollection;
 
+/*
+ * Класс паттерна Реестр, исользуется для применения файла настроек.
+ * */
+
 class Registry
 {
     /**
